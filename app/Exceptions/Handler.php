@@ -6,6 +6,10 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
 class Handler extends ExceptionHandler
+
+/**
+ * ez egy teszt komment gitre
+ */
 {
     /**
      * A list of exception types with their corresponding custom log levels.
