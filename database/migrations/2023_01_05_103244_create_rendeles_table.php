@@ -13,15 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('rendeles', function (Blueprint $table) {
             $table->id();
-            $table->string('nev');
-            $table->string('email')->unique();
-            $table->string('cim');
-            $table->string('telefon');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->integer('userId');
+            $table->integer('iphoneId');
+            $table->timestamp('rendelesIdeje');
             $table->timestamps();
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_hungarian_ci';
@@ -35,6 +31,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('rendeles');
     }
 };
+

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\IphoneController;
+use App\Http\Controllers\API\RendelesController;
 use App\Http\Controllers\API\UserController;
 use App\Models\Iphone;
 use Illuminate\Http\Request;
@@ -24,3 +25,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource("/iphones", IphoneController::class);
 
 Route::apiResource("/users", UserController::class);
+
+Route::apiResource("/rendelesek", RendelesController::class);
