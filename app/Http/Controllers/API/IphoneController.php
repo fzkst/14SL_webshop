@@ -63,7 +63,7 @@ class IphoneController extends Controller
         if (is_null($iphone)){
             return response()->json(['message:'=>'Ilyen azonosítóval nem található rekord!'], 404);
         }
-        $iphone->fill($$request->all());
+        $iphone->fill($request->all());
         $iphone->save();
         return response()->json($iphone);
     }
