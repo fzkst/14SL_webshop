@@ -28,7 +28,7 @@
     <main class="main-content border-radius-lg">
         @include('layouts.inc.adminnav')
         <div class="content py-4">
-            @yield('content')
+            @yield('content')5
         </div>
         @include('layouts.inc.footer')
 
