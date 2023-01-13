@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('nev');
+            $table->string('name');
             $table->string('email')->unique();
-            $table->string('cim');
-            $table->string('telefon');
+            //$table->string('cim');
+            //$table->string('telefon');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->tinyInteger('jogosultsag')->default('0'); //timestamps elé
             $table->rememberToken();
             $table->timestamps();
             $table->charset = 'utf8mb4';

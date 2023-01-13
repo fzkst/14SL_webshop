@@ -14,10 +14,10 @@ class User extends Authenticatable
 
     protected $visible = [
         'id',
-        'nev',
-        'email',
-        'cim',
-        'telefon'
+        'name',
+        'email'
+        //'cim',
+        //'telefon'
     ];
 
     /**
@@ -26,10 +26,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'nev',
+        'name',
         'email',
-        'cim',
-        'telefon',
+        //'cim',
+        //'telefon',
         'password'
     ];
 
