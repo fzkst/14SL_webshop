@@ -19,6 +19,15 @@ class IphoneSeeder extends Seeder
         Iphone::factory(10)->create();
     }
 }
+
+/* public function run()
+{
+    ToDo::factory()->create(["title" => "Mosás"]);
+    ToDo::factory()->create(["title" => "Főzés"]);
+    ToDo::factory()->create(["title" => "Tanulás"]);
+} */
+
+
 // DB::table('iphones')->insert(array (
         //     0 =>
         //     array (

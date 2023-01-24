@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateIphoneRequest extends FormRequest
+class UpdateKategoriaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,13 @@ class UpdateIphoneRequest extends FormRequest
     public function rules()
     {
         return [
-            'modell' => 'required | string | max:50',
-            'szin' => 'required | string | max:30',
-            'tarhely' => 'required | integer',
-            'ar' => 'required | integer',
-            'keszlet' => 'required | integer',
-            'kepfajl' => 'required | image'
+            'nev' => 'required | string | max:255',
+            //'slug' => 'required | string | max:255',
+            'leiras' => 'required | string',
+            'kepfajl' => 'required | image',
+            //'meta_cim' => 'required | string | max:255',
+            //'meta_leiras' => 'required | string | max:255',
+            //'meta_kulcsszo' => 'required | string | max:255'
         ];
     }
 }

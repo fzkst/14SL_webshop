@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\FelhasznaloController;
 use App\Http\Controllers\API\IphoneController;
 use App\Http\Controllers\API\RendelesController;
 use App\Http\Controllers\API\UserController;
@@ -27,3 +28,5 @@ Route::apiResource("/iphones", IphoneController::class);
 Route::apiResource("/users", UserController::class);
 
 Route::apiResource("/rendelesek", RendelesController::class);
+
+Route::apiResource("/felhasznalok", FelhasznaloController::class);

@@ -29,7 +29,7 @@ class StoreIphoneRequest extends FormRequest
             'tarhely' => 'required | integer',
             'ar' => 'required | integer',
             'keszlet' => 'required | integer',
-            'kepfajl' => 'required | string | max:100'
+            'kepfajl' => 'required | image'
         ];
     }
 }

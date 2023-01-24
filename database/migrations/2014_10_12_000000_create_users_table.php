@@ -17,11 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            //$table->string('cim');
-            //$table->string('telefon');
-            $table->timestamp('email_verified_at')->nullable();
+            //$table->timestamp('email_verified_at');
             $table->string('password');
-            $table->tinyInteger('jogosultsag')->default('0'); //timestamps elé
+            $table->tinyInteger('jogosultsag')->default('0');
             $table->rememberToken();
             $table->timestamps();
             $table->charset = 'utf8mb4';
