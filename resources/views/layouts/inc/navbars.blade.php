@@ -17,7 +17,7 @@
                             <i class="fs-4 bi-grid {{ Request::is('kategoriak') ? 'active' : '' }} p-1"></i><span class="ms-1 d-none d-sm-inline ms-3">Kategóriák</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url('mobilok') }}" class="px-0 align-middle">
+                        <a href="{{ url('iphones') }}" class="px-0 align-middle">
                             <i class="fs-4 bi-table {{ Request::is('mobilok') ? 'active' : '' }} p-1"></i><span class="ms-1 d-none d-sm-inline ms-3">Mobilok</span></a>
                     </li>
                     <li>

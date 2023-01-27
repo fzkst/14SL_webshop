@@ -16,8 +16,8 @@ class IphoneController extends Controller
         return view('admin.iphones.index', compact('iphones'));
     }
 
-    public function mobilHozzaadas(){
-        return view('admin.iphones.hozzaad');
+    public function create(){
+        return view('admin.iphones.create');
     }
 
     public function store(StoreIphoneRequest $request){
@@ -28,30 +28,22 @@ class IphoneController extends Controller
             $filename = time().'.'.$ext;
             $file->move('img/feltoltesek/mobilok', $filename);
             $iphone->kepfajl = $filename;
-
         }
-
         $iphone->modell = $request->input('modell');
         $iphone->szin = $request->input('szin');
         $iphone->tarhely = $request->input('tarhely');
         $iphone->ar = $request->input('ar');
         $iphone->keszlet = $request->input('keszlet');
-
-        //$iphone->slug = $request->input('slug');
         //$iphone->leiras = $request->input('leiras');
         //$iphone->status = $request->input('status') == true ? '1' : '0';
         //$iphone->nepszeru = $request->input('nepszeru') == true ? '1' : '0';
-        //$iphone->meta_cim = $request->input('meta_cim');
-        //$iphone->meta_leiras = $request->input('meta_leiras');
-        //$iphone->meta_kulcsszo = $request->input('meta_kulcsszo');
-        //$iphone->kepfajl = $request->input('kepfajl');
         $iphone->save();
-        return redirect('mobilok')->with('message: ', "Sikeresen hozzáadva!");
+        return redirect('iphones')->with('message: ', "Sikeresen hozzáadva!");
     }
 
-    public function mobilSzerkeszt($id){
+    public function edit($id){
         $iphone = Iphone::find($id);
-        return view('admin.iphones.szerkeszt', compact('iphone'));
+        return view('admin.iphones.edit', compact('iphone'));
     }
 
     public function update(UpdateIphoneRequest $request, $id){
@@ -74,7 +66,7 @@ class IphoneController extends Controller
         $iphone->ar = $request->input('ar');
         $iphone->keszlet = $request->input('keszlet');
         $iphone->update();
-        return redirect('mobilok')->with('message: ', "A mobil adatainak módosítása sikeres!");
+        return redirect('iphones')->with('message: ', "A mobil adatainak módosítása sikeres!");
     }
 
     public function destroy($id){
@@ -90,7 +82,7 @@ class IphoneController extends Controller
             }
         }
         $iphone->delete();
-        return redirect('mobilok')->with('message: ', "A mobil törlése sikeres!");
+        return redirect('iphones')->with('message: ', "A mobil törlése sikeres!");
     }
 
 }

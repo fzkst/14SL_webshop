@@ -31,6 +31,14 @@ class KategoriaSeeder extends Seeder
             "kepfajl" => "Iphone_14_pro_kat.png"
         ]);
 
+        Kategoria::factory()->create([
+            "nev" => "Laptopok",
+            "leiras" => "A MacBook Pro az Apple professzionális hordozható számítógépe. 2006-ban mutatta be az Apple, 2020-ig kizárólag Intel processzorral szerelték, 2020. novemberében az Apple saját processzorával mutatott be MacBook Pro-t.",
+            "status" => 0,
+            "nepszeru" => 0,
+            "kepfajl" => "MacBook_Pro_kat.png"
+        ]);
+
 
 
 

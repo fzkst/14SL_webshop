@@ -16,14 +16,10 @@ return new class extends Migration
         Schema::create('kategoriak', function (Blueprint $table) {
             $table->id();
             $table->string('nev');
-            //$table->string('slug');
             $table->longText('leiras');
             $table->tinyInteger('status')->default('0');
             $table->tinyInteger('nepszeru')->default('0');
             $table->string('kepfajl');
-            //$table->string('meta_cim');
-            //$table->string('meta_leiras');
-            //$table->string('meta_kulcsszo');
             $table->timestamps();
         });
     }

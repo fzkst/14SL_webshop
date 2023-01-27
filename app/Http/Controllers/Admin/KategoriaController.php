@@ -17,10 +17,15 @@ class KategoriaController extends Controller
         return view('admin.kategoriak.index', compact('kategoria'));
     }
 
-    public function kategoriaHozzaadas()
+    public function create(){
+        return view('admin.kategoriak.create');
+    }
+
+
+   /*  public function kategoriaHozzaadas()
     {
         return view('admin.kategoriak.hozzaad');
-    }
+    } */
 
     public function store(StoreKategoriaRequest $request)
     {
@@ -35,25 +40,21 @@ class KategoriaController extends Controller
         }
 
         $kategoria->nev = $request->input('nev');
-        //$kategoria->slug = $request->input('slug');
         $kategoria->leiras = $request->input('leiras');
         $kategoria->status = $request->input('status') == true ? '1' : '0';
         $kategoria->nepszeru = $request->input('nepszeru') == true ? '1' : '0';
-        //$kategoria->meta_cim = $request->input('meta_cim');
-        //$kategoria->meta_leiras = $request->input('meta_leiras');
-        //$kategoria->meta_kulcsszo = $request->input('meta_kulcsszo');
-        //$kategoria->kepfajl = $request->input('kepfajl');
         $kategoria->save();
         return redirect('kategoriak')->with('message: ', "Sikeresen hozzáadva!");
-
-        //return view('admin.index');
-
     }
 
-    public function kategoriaSzerkesztes($id)
+    public function show(Kategoria $kategoria){
+        //
+    }
+
+    public function edit($id)
     {
         $kategoria = Kategoria::find($id);
-        return view('admin.kategoriak.szerkeszt', compact('kategoria'));
+        return view('admin.kategoriak.edit', compact('kategoria'));
     }
 
 
@@ -73,13 +74,9 @@ class KategoriaController extends Controller
             $kategoria->kepfajl = $filename;
         }
         $kategoria->nev = $request->input('nev');
-        //$kategoria->slug = $request->input('slug');
         $kategoria->leiras = $request->input('leiras');
         $kategoria->status = $request->input('status') == true ? '1' : '0';
         $kategoria->nepszeru = $request->input('nepszeru') == true ? '1' : '0';
-        //$kategoria->meta_cim = $request->input('meta_cim');
-        //$kategoria->meta_leiras = $request->input('meta_leiras');
-        //$kategoria->meta_kulcsszo = $request->input('meta_kulcsszo');
         $kategoria->update();
         return redirect('kategoriak')->with('message:', "A kategória módosítása sikeres!");
     }
