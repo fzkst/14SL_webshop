@@ -8,21 +8,25 @@
                 <hr class="container">
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
-                        <a href="{{ url('/dashboard') }}" class="align-middle px-0">
+                        <a href="{{ url('/dashboard') }}" class="px-0 align-middle">
                             <i class="fs-4 bi-speedometer2 {{ Request::is('dashboard') ? 'active' : '' }} p-1"></i> <span class="ms-1 d-none d-sm-inline ms-3">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ url('kategoriak') }}" class="px-0 align-middle">
-                            <i class="fs-4 bi-grid {{ Request::is('kategoriak') ? 'active' : '' }} p-1"></i><span class="ms-1 d-none d-sm-inline ms-3">Kategóriák</span></a>
+                            <i class="fs-4 bi-grid p-1 {{ Request::is('kategoriak') ? 'active' : '' }}"></i><span class="ms-1 d-none d-sm-inline ms-3">Kategóriák</span></a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ url('iphones') }}" class="px-0 align-middle">
-                            <i class="fs-4 bi-table {{ Request::is('mobilok') ? 'active' : '' }} p-1"></i><span class="ms-1 d-none d-sm-inline ms-3">Mobilok</span></a>
+                            <i class="fs-4 bi-table p-1 {{ Request::is('mobilok') ? 'active' : '' }}"></i><span class="ms-1 d-none d-sm-inline ms-3">Mobilok</span></a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a href="{{ url('felhasznalok') }}" class="px-0 align-middle">
-                            <i class="fs-4 bi-people {{ Request::is('felhasznalok') ? 'active' : '' }} p-1"></i> <span class="ms-1 d-none d-sm-inline">Felhasználók</span> </a>
+                            <i class="fs-4 bi-people p-1 {{ Request::is('felhasznalok') ? 'active' : '' }}"></i> <span class="ms-1 d-none d-sm-inline ms-2">Felhasználók</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url('rendelesek') }}" class="px-0 align-middle">
+                            <i class="fs-4 bi-table p-1 {{ Request::is('rendelesek') ? 'active' : '' }}"></i><span class="ms-1 d-none d-sm-inline ms-3">Rendelések</span></a>
                     </li>
 
                     <li>
@@ -70,10 +74,7 @@
                         </ul>
                     </li>
 
-                    <li>
-                        <a href="{{ url('kategoriak') }}" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table {{ Request::is('rendelesek') ? 'active' : '' }}"></i><span class="ms-1 d-none d-sm-inline">Rendelések</span></a>
-                    </li>
+
 
 
                 </ul>

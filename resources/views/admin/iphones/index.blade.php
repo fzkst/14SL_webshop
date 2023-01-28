@@ -38,7 +38,7 @@
                                 <form action="{{ url('iphones/'.$item->id)}}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <a href=""><button class="btn btn-dangerer btn-sm">Törlés</button></a>
+                                    <a href=""><button class="btn btn-dangerer btn-sm mt-1">Törlés</button></a>
                                 </form>
                             </td>
                         </tr>

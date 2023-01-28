@@ -41,6 +41,10 @@ class IphoneController extends Controller
         return redirect('iphones')->with('message: ', "Sikeresen hozzáadva!");
     }
 
+    public function show(Iphone $kategoria){
+        //
+    }
+
     public function edit($id){
         $iphone = Iphone::find($id);
         return view('admin.iphones.edit', compact('iphone'));

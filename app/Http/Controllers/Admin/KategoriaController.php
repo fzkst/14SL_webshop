@@ -21,12 +21,6 @@ class KategoriaController extends Controller
         return view('admin.kategoriak.create');
     }
 
-
-   /*  public function kategoriaHozzaadas()
-    {
-        return view('admin.kategoriak.hozzaad');
-    } */
-
     public function store(StoreKategoriaRequest $request)
     {
         $kategoria = new Kategoria();

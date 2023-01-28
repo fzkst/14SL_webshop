@@ -15,8 +15,8 @@ class FelhasznaloController extends Controller
         return view('admin.felhasznalok.index', compact('felhasznalok'));
     }
 
-    public function felhasznaloHozzaadas(){
-        return view('admin.felhasznalok.hozzaad');
+    public function create(){
+        return view('admin.felhasznalok.create');
     }
 
     public function store(StoreFelhasznaloRequest $request){
@@ -35,9 +35,13 @@ class FelhasznaloController extends Controller
         return redirect('felhasznalok')->with('message: ', "Sikeresen hozzáadva!");
     }
 
-    public function felhasznaloSzerkeszt($id){
+    public function show(Felhasznalo $kategoria){
+        //
+    }
+
+    public function edit($id){
         $felhasznalo = Felhasznalo::find($id);
-        return view('admin.felhasznalok.szerkeszt', compact('felhasznalo'));
+        return view('admin.felhasznalok.edit', compact('felhasznalo'));
     }
 
     public function update(UpdateFelhasznaloRequest $request, $id){
@@ -61,7 +65,8 @@ class FelhasznaloController extends Controller
         if(is_null($felhasznalo)){
             return response()->json(["message: " => "Ilyen azonosítóval nem található felhasználó!"], 404);
         }
-        $felhasznalo->destroy();
+        $felhasznalo->delete();
         return redirect('felhasznalok')->with('message: ', "A felhasználó törlése sikeres!");
     }
 }
+
