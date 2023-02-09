@@ -17,39 +17,42 @@ class FelhasznaloFactory extends Factory
      */
     public function definition()
     {
-     /*   $maganszemely = random_int(0, 1);
-        //$veletlen = random_int(0, 1);
-        //$nev = array(['male', 'female']);
-       // $vezeteknev = '';
-        //$keresztnev = '';
-        //$adoszam1 = substr(str_shuffle("0123456789"), 0, 8);
-        //$adoszam2 = random_int(1, 5);
-        //$adoszam3 = random_int(11, 44);
-       /* if ($maganszemely === 0){
+        $maganszemely = random_int(0, 1);
+        $veletlen = random_int(0, 1);
+        $nev = array(['male', 'female']);
+        $vezeteknev = '';
+        $keresztnev = '';
+        $adoszam1 = substr(str_shuffle("0123456789"), 0, 8);
+        $adoszam2 = random_int(1, 5);
+        $adoszam3 = random_int(11, 44);
+        if ($maganszemely === 0){
             $cegnev = fake()->company();
-            //$vezeteknev = '';
-            //$keresztnev = '';
+            $vezeteknev = '';
+            $keresztnev = '';
+            $adoszam = $adoszam1.'-'.$adoszam2.'-'.$adoszam3;
         } else{
-            $cegnev = 's';
-            //$vezeteknev = fake()->lastName($nev.$veletlen);
-            //$keresztnev = fake()->firstName($nev.$veletlen);
-        } */
+            $nem = fake()->randomElement(['male', 'female']);
+            $cegnev = '';
+            $vezeteknev = fake()->lastName($nem);
+            $keresztnev = fake()->firstName($nem);
+            $adoszam = '';
+        }
 
-      /*  return [
-            'user_id' => '5', // User::all()->random()->id,
-            'maganszemely' => $maganszemely,
-            'cegnev' => '5', // $cegnev,
-            'vezeteknev' => '5', // $vezeteknev,
-            'keresztnev' => '5', // $keresztnev,
-            'iranyitoszam' => fake()->randomElement([1, 5, 6]),
-            'varos' => '5', // fake()->state(),
-            'cim' => '5', // fake()->streetAddress(),
-            'telefon' => '5', // fake()->phoneNumber(),
-            'adoszam' => '5' // $adoszam1.'-'.$adoszam2.'-'.$adoszam3
-        ];*/
         return [
-            //
+            'user_id' => User::all()->random()->id,
+            'maganszemely' => $maganszemely,
+            'cegnev' => $cegnev,
+            'vezeteknev' => $vezeteknev,
+            'keresztnev' => $keresztnev,
+            'iranyitoszam' => fake()->randomElement([1541, 2045, 1156]),
+            'varos' => fake()->state(),
+            'cim' => fake()->streetAddress(),
+            'telefon' => fake()->phoneNumber(),
+            'adoszam' => $adoszam
         ];
+    /*     return [
+            //
+        ]; */
     }
 }
 

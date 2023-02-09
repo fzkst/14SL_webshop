@@ -15,6 +15,6 @@ class RendelesSeeder extends Seeder
      */
     public function run()
     {
-        Rendeles::factory(10)->create();
+        Rendeles::factory(20)->create();
     }
 }

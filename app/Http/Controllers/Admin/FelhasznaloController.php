@@ -23,14 +23,17 @@ class FelhasznaloController extends Controller
         $felhasznalo = new Felhasznalo();
         $felhasznalo->user_id = $request->input('user_id');
         $felhasznalo->maganszemely = $request->input('maganszemely')  == true ? '1' : '0';
-        $felhasznalo->cegnev = $request->input('cegnev');
-        $felhasznalo->vezeteknev = $request->input('vezeteknev');
-        $felhasznalo->keresztnev = $request->input('keresztnev');
+        if ($request->input('maganszemely')) {
+            $felhasznalo->vezeteknev = $request->input('vezeteknev');
+            $felhasznalo->keresztnev = $request->input('keresztnev');
+        } else {
+            $felhasznalo->cegnev = $request->input('cegnev');
+            $felhasznalo->adoszam = $request->input('adoszam');
+        }
         $felhasznalo->iranyitoszam = $request->input('iranyitoszam');
         $felhasznalo->varos = $request->input('varos');
         $felhasznalo->cim = $request->input('cim');
         $felhasznalo->telefon = $request->input('telefon');
-        $felhasznalo->adoszam = $request->input('adoszam');
         $felhasznalo->save();
         return redirect('felhasznalok')->with('message: ', "Sikeresen hozzáadva!");
     }

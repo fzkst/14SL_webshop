@@ -16,7 +16,7 @@ class IphoneSeeder extends Seeder
      */
     public function run()
     {
-        Iphone::factory(10)->create();
+        Iphone::factory(20)->create();
     }
 }
 

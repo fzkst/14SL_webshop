@@ -15,9 +15,9 @@ class FelhasznaloSeeder extends Seeder
      */
     public function run()
     {
-        //Felhasznalo::factory(10)->create();
+        Felhasznalo::factory(30)->create();
 
-        Felhasznalo::factory()->create([
+        /* Felhasznalo::factory()->create([
             "user_id" => 2,
             "maganszemely" => 1,
             "cegnev" => "béla",
@@ -28,7 +28,7 @@ class FelhasznaloSeeder extends Seeder
             "cim" => "Pesti út 54.",
             "telefon" => "+36205487955",
             "adoszam" => "007"
-        ]);
+        ]); */
 
     }
 }
